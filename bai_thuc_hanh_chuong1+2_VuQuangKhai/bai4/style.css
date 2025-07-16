@@ -1,0 +1,118 @@
+/* Căn chỉnh form */
+form {
+  max-width: 700px;
+  margin-bottom: 30px;
+}
+
+/* Label hiển thị bên trái, input bên phải */
+form label {
+  display: inline-block;
+  width: 150px;
+  vertical-align: top;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Các ô input, select, textarea */
+form input[type="text"],
+form input[type="email"],
+form input[type="date"],
+form input[type="tel"],
+form input[type="file"],
+form input[type="password"],
+form select,
+form textarea {
+  width: 300px;
+  padding: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Checkbox và radio không chiếm chiều rộng */
+form input[type="checkbox"],
+form input[type="radio"] {
+  width: auto;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+/* Khung textarea */
+textarea {
+  font-family: Arial, sans-serif;
+  resize: vertical;
+}
+
+/* Giao diện tổng thể */
+body {
+  font-family: sans-serif;
+  padding: 30px;
+  background-color: #f9f9f9;
+}
+
+section {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Đường kẻ ngang */
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 15px 0;
+}
+
+/* Nút bấm */
+input[type="submit"],
+input[type="button"] {
+  padding: 8px 16px;
+  margin-top: 10px;
+  margin-right: 10px;
+  background-color: #eee;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #cfc;
+}
+input[type="button"]:hover {
+  background-color: #fcc;
+}
+.radio-group {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 10px;
+}
+
+.radio-group label {
+  width: auto;
+  font-weight: normal;
+  margin-right: 20px;
+}
+.checkbox-group {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 10px;
+}
+
+.checkbox-group label {
+  width: auto;
+  font-weight: normal;
+  margin-right: 20px;
+}
+.captcha-text {
+  font-size: 34px;
+  font-weight: bold;
+  font-family: monospace;
+  letter-spacing: 10px;
+  margin-left: 20px;
+  vertical-align: middle;
+}
