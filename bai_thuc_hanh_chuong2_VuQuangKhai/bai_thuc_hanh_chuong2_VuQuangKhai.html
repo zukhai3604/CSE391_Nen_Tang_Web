@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai thuc hanh cua khai vu</title>
+</head>
+<body>
+    <h2>Form thêm sinh viên</h2>
+    <form action="bai_thuc_hanh_chuong2_VuQuangKhai.html">
+        <label for="Masv">Mã sinh viên:</label><br>
+        <input type="text" id="Masv" name="Masv" required><br><br>
+
+        <label for="Hoten">Họ tên:</label><br>
+        <input type="text" id="Hoten" name="Hoten" required><br><br>
+
+        <label for="Email">Email:</label><br>
+        <input type="email" id="Email" name="Email" required><br><br>
+
+        <label for="Ngaysinh">Ngày sinh:</label><br>
+        <input type="date" id="Ngaysinh" name="Ngaysinh" required><br><br>
+
+        <label>Giới tính:</label><br>
+        <input type="radio" name="gioi_tinh" value="Nam"> Nam
+        <input type="radio" name="gioi_tinh" value="Nữ"> Nữ<br><br>
+
+        <label for="Ghichu">Ghi chú:</label><br>
+        <textarea id="Ghichu" name="Ghichu"></textarea><br><br>
+
+        <input type="submit" value="Thêm sinh viên">
+    </form>
+   
+    
+    <h2>Bảng sinh viên</h2>
+    <table border="1" cellspacing="0">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Mã sinh viên</th>
+                <th>Họ tên</th>
+                <th>Email</th>
+                <th>Giới tính</th>
+                <th>Ngày sinh</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>SV001</td>
+                <td>Vũ Quang Khải</td>
+                <td>vqkhai2004@gmail.com</td>
+                <td>Nam</td>
+                <td>03/06/2004</td>
+                <td><button>sửa</button><button>xóa</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>SV002</td>
+                <td>Vũ Quang Tèo</td>
+                <td>vqt2001@gmail.com</td>
+                <td>Nam</td>
+                <td>15/05/2001</td>
+                <td><button>sửa</button><button>xóa</button></td>
+                
+            </tr>
+              <tr>
+                <td>3</td>
+                <td>SV003</td>
+                <td>Vũ Quang Hướng</td>
+                <td>vqh2003@gmai.com</td>
+                <td>Nam</td>
+                <td>15/05/2003</td>
+                <td><button>sửa</button><button>xóa</button></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
