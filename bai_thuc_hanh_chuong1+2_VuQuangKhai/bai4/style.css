@@ -136,3 +136,23 @@ input[type="button"]:hover {
     padding: 5px 12px;
     cursor: pointer;
 }
+.container {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 20px;
+}
+.form-row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.form-row label {
+    width: 100px; /* Chiều rộng cố định cho label bên trái */
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.radio-group div {
+    margin-bottom: 4px;
+}
