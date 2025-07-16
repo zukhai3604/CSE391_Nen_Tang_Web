@@ -1,10 +1,9 @@
-/* Căn chỉnh form */
+
 form {
   max-width: 700px;
   margin-bottom: 30px;
 }
 
-/* Label hiển thị bên trái, input bên phải */
 form label {
   display: inline-block;
   width: 150px;
@@ -13,7 +12,6 @@ form label {
   font-weight: bold;
 }
 
-/* Các ô input, select, textarea */
 form input[type="text"],
 form input[type="email"],
 form input[type="date"],
@@ -32,7 +30,6 @@ form textarea {
   max-width: 500px;
 }
 
-/* Checkbox và radio không chiếm chiều rộng */
 form input[type="checkbox"],
 form input[type="radio"] {
   width: auto;
@@ -40,13 +37,11 @@ form input[type="radio"] {
   margin-right: 5px;
 }
 
-/* Khung textarea */
 textarea {
   font-family: Arial, sans-serif;
   resize: vertical;
 }
 
-/* Giao diện tổng thể */
 body {
   font-family: sans-serif;
   padding: 30px;
@@ -61,14 +56,12 @@ section {
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-/* Đường kẻ ngang */
 hr {
   border: none;
   border-top: 1px solid #ccc;
   margin: 15px 0;
 }
 
-/* Nút bấm */
 input[type="submit"],
 input[type="button"] {
   padding: 8px 16px;
@@ -115,4 +108,31 @@ input[type="button"]:hover {
   letter-spacing: 10px;
   margin-left: 20px;
   vertical-align: middle;
+}
+
+.navigation-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+}
+
+.nav-left button {
+    margin-right: 5px;
+    padding: 5px 10px;
+}
+
+.required-note {
+    margin-left: 10px;
+    font-style: italic;
+    color: #555;
+}
+
+.nav-right input[type="submit"],
+.nav-right input[type="button"] {
+    margin-left: 10px;
+    padding: 5px 12px;
+    cursor: pointer;
 }
