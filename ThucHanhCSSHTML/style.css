@@ -67,7 +67,7 @@ body {
   flex: 1;
 }
 
-@media (max-width: 768px) {
+
   .main-container {
     flex-direction: column;
   }
@@ -77,7 +77,7 @@ body {
     width: 100%;
     margin-bottom: 30px;
   }
-}
+
 
 label {
   display: block;
