@@ -67,7 +67,6 @@ body {
   flex: 1;
 }
 
-/* ===== Responsive ===== */
 @media (max-width: 768px) {
   .main-container {
     flex-direction: column;
@@ -156,7 +155,6 @@ th {
   border-bottom: 1px solid #2e3044;
 }
 
-/* ===== Buttons ===== */
 .btn-group {
   display: flex;
   gap: 8px;
