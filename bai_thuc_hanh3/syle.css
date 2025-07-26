@@ -1,0 +1,54 @@
+.btnluachon .btn-warning {
+  color: white
+
+}
+
+.btnluachon .btn-danger {
+  color: white;
+
+}
+.suatable{
+  border-radius: 10px;
+
+}
+.btnluachon {
+  display: flex;
+  gap: 8px;
+justify-content: center;
+}
+
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.card-header {
+background-color: #f8f9fa;
+}
+
+.btnluachon .btn-warning:hover {
+  background-color: #d39e00;
+  color: white;
+}
+.btnluachon .btn-danger:hover {
+  background-color: #bd2130;
+  color: white;
+}
+.table-hover tbody tr:hover {
+  background-color: #f5f5f5;
+  transition: background-color 0.3s ease;
+}
+.btnluachon button {
+  transition: all 0.3s ease;
+}
+
+.navbar {
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa !important;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+
