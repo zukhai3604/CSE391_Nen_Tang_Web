@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const thongBao = document.getElementById("thongBao");
   const form = btnThem.closest('form');
   let selectedRow = null;
+  function isEmpty(field) {
+  return !field.value.trim();
+}
 
   tbody.addEventListener("click", function (e) {
     const suaBtn = e.target.closest("button.btn-warning");
@@ -35,11 +38,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const gioitinh = gtRadio ? gtRadio.value : "";
 
     thongBao.className = "";
-    if (!masv.value.trim() || !hoten.value.trim() || !email.value.trim() || !ngaysinh.value.trim() || !gioitinh || !diachi.value.trim()) {
-      thongBao.textContent = "Vui lòng nhập đầy đủ tất cả thông tin sinh viên !!!";
+       if (isEmpty(masv)) {
+      thongBao.textContent = "Mã sinh viên không được để trống";
       thongBao.className = "text-danger fw-bold my-2 text-center";
-      (!masv.value.trim() ? masv : !hoten.value.trim() ? hoten : !email.value.trim() ? email : !ngaysinh.value.trim() ? ngaysinh : !diachi.value.trim() ? diachi : document.getElementById("gioiTinhNam")).focus();
-      return;
+      masv.focus();
+      return false;
+    }
+
+    if (isEmpty(hoten)) {
+      thongBao.textContent = "Họ tên không được để trống";
+      thongBao.className = "text-danger fw-bold my-2 text-center";
+      hoten.focus();
+      return false;
+    }
+
+    if (isEmpty(email)) {
+      thongBao.textContent = "Email không được để trống";
+      thongBao.className = "text-danger fw-bold my-2 text-center";
+      email.focus();
+      return false;
     }
 
     const regexEmail = /^\S+@\S+\.\S+$/;
@@ -47,9 +64,30 @@ document.addEventListener("DOMContentLoaded", function () {
       thongBao.textContent = "Email không hợp lệ";
       thongBao.className = "text-danger fw-bold my-2 text-center";
       email.focus();
-      return;
+      return false;
     }
 
+    if (isEmpty(ngaysinh)) {
+      thongBao.textContent = "Ngày sinh không được bỏ trống";
+      thongBao.className = "text-danger fw-bold my-2 text-center";
+      ngaysinh.focus();
+      return false;
+    }
+
+    if (!gioitinh) {
+      thongBao.textContent = "Vui lòng chọn Giới tính";
+      thongBao.className = "text-danger fw-bold my-2 text-center";
+      document.getElementById("gioiTinhNam").focus();
+      return false;
+    }
+
+    if (isEmpty(diachi)) {
+      thongBao.textContent = "Địa chỉ không được để trống";
+      thongBao.className = "text-danger fw-bold my-2 text-center";
+      diachi.focus();
+      return false;
+    }
+    
     if (selectedRow) {
       selectedRow.cells[1].innerText = masv.value;
       selectedRow.cells[2].innerText = hoten.value;
@@ -58,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
       selectedRow.cells[5].innerText = ngaysinh.value;
       selectedRow.cells[6].innerText = diachi.value;
 
-      thongBao.textContent = "Cập nhật thành công!";
+      thongBao.textContent = "Cập nhật thành công";
       thongBao.className = "text-success fw-bold my-2 text-center";
     } else {
       const stt = tbody.rows.length + 1;
@@ -80,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
       `;
       tbody.appendChild(tr);
 
-      thongBao.textContent = "Đã thêm sinh viên thành công!";
+      thongBao.textContent = "Đã thêm sinh viên thành công";
       thongBao.className = "text-success fw-bold my-2 text-center";
     }
 
@@ -99,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (confirm("Bạn có chắc chắn muốn xoá?")) {
       const row = btn.closest("tr");
       row.remove();
-      thongBao.textContent = "Xoá thành công!";
+      thongBao.textContent = "Xoá thành công";
       thongBao.className = "text-success fw-bold my-2 text-center";
 
       [...tbody.rows].forEach((r, i) => r.cells[0].innerText = i + 1);
