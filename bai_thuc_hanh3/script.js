@@ -2,40 +2,46 @@ document.addEventListener("DOMContentLoaded", function () {
   const btnThem = document.getElementById("btnThem");
   const tbody = document.querySelector("table tbody");
   const thongBao = document.getElementById("thongBao");
-  const form = document.querySelector("form");
+  const form = btnThem.closest('form');
   let selectedRow = null;
 
   tbody.addEventListener("click", function (e) {
     const suaBtn = e.target.closest("button.btn-warning");
-    if (!suaBtn) return; 
+    if (!suaBtn) return;
     const tr = suaBtn.closest("tr");
     selectedRow = tr;
+
     document.getElementById("Masv").value     = tr.cells[1].innerText;
     document.getElementById("Hoten").value    = tr.cells[2].innerText;
     document.getElementById("Email").value    = tr.cells[3].innerText;
     document.getElementById("Ngaysinh").value = tr.cells[5].innerText;
+    document.getElementById("Diachi").value   = tr.cells[6].innerText;
     const gt = tr.cells[4].innerText;
     document.getElementById(gt === "Nam" ? "gioiTinhNam" : "gioiTinhNu").checked = true;
-    btnThem.textContent = "Cập nhật sinh viên";
-  });
 
+    btnThem.textContent = "Cập nhật sinh viên";
+    btnThem.type = "button";
+  });
 
   btnThem.addEventListener("click", function (e) {
     e.preventDefault();
-    alert("Đã nhấn nút " + (selectedRow ? "Cập nhật" : "Thêm"));
-    const masv    = document.getElementById("Masv");
-    const hoten   = document.getElementById("Hoten");
-    const email   = document.getElementById("Email");
-    const ngaysinh= document.getElementById("Ngaysinh");
-    const gtRadio = document.querySelector('input[name="gioi_tinh"]:checked');
-    const gioitinh= gtRadio ? gtRadio.value : "";
+
+    const masv     = document.getElementById("Masv");
+    const hoten    = document.getElementById("Hoten");
+    const email    = document.getElementById("Email");
+    const ngaysinh = document.getElementById("Ngaysinh");
+    const diachi   = document.getElementById("Diachi");
+    const gtRadio  = document.querySelector('input[name="gioi_tinh"]:checked');
+    const gioitinh = gtRadio ? gtRadio.value : "";
+
     thongBao.className = "";
-    if (!masv.value.trim() || !hoten.value.trim()) {
-      thongBao.textContent = "Vui lòng nhập Mã sinh viên và Họ tên";
+    if (!masv.value.trim() || !hoten.value.trim() || !email.value.trim() || !ngaysinh.value.trim() || !gioitinh || !diachi.value.trim()) {
+      thongBao.textContent = "Vui lòng nhập đầy đủ tất cả thông tin sinh viên !!!";
       thongBao.className = "text-danger fw-bold my-2 text-center";
-      (!masv.value.trim() ? masv : hoten).focus();
+      (!masv.value.trim() ? masv : !hoten.value.trim() ? hoten : !email.value.trim() ? email : !ngaysinh.value.trim() ? ngaysinh : !diachi.value.trim() ? diachi : document.getElementById("gioiTinhNam")).focus();
       return;
     }
+
     const regexEmail = /^\S+@\S+\.\S+$/;
     if (!regexEmail.test(email.value)) {
       thongBao.textContent = "Email không hợp lệ";
@@ -50,12 +56,11 @@ document.addEventListener("DOMContentLoaded", function () {
       selectedRow.cells[3].innerText = email.value;
       selectedRow.cells[4].innerText = gioitinh;
       selectedRow.cells[5].innerText = ngaysinh.value;
+      selectedRow.cells[6].innerText = diachi.value;
 
       thongBao.textContent = "Cập nhật thành công!";
       thongBao.className = "text-success fw-bold my-2 text-center";
-      selectedRow = null;
     } else {
-    
       const stt = tbody.rows.length + 1;
       const tr = document.createElement("tr");
       tr.innerHTML = `
@@ -65,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <td>${email.value}</td>
         <td>${gioitinh}</td>
         <td>${ngaysinh.value}</td>
+        <td>${diachi.value}</td>
         <td>
           <div class="btnluachon">
             <button class="btn btn-sm btn-warning me-1">Sửa</button>
@@ -73,17 +79,20 @@ document.addEventListener("DOMContentLoaded", function () {
         </td>
       `;
       tbody.appendChild(tr);
+
       thongBao.textContent = "Đã thêm sinh viên thành công!";
       thongBao.className = "text-success fw-bold my-2 text-center";
     }
+
+    form.reset();
+    selectedRow = null;
+    btnThem.textContent = "Thêm sinh viên";
+    btnThem.type = "submit";
 
     setTimeout(() => {
       thongBao.textContent = "";
       thongBao.className = "";
     }, 3000);
-
-    form.reset();
-    btnThem.textContent = "Thêm sinh viên";
   });
 
   window.xoaDong = function (btn) {
@@ -92,7 +101,6 @@ document.addEventListener("DOMContentLoaded", function () {
       row.remove();
       thongBao.textContent = "Xoá thành công!";
       thongBao.className = "text-success fw-bold my-2 text-center";
-
 
       [...tbody.rows].forEach((r, i) => r.cells[0].innerText = i + 1);
 
