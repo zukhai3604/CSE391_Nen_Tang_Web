@@ -21,7 +21,11 @@ justify-content: center;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+
 }
+
+
 
 .card-header {
 background-color: #f8f9fa;
@@ -51,4 +55,7 @@ background-color: #f8f9fa;
   margin-bottom: 20px;
 }
 
-
+#thongBao {
+  min-height: 38px; /* tạo khoảng trống sẵn */
+  transition: all 0.3s ease; /* mượt hơn khi hiển thị */
+}
