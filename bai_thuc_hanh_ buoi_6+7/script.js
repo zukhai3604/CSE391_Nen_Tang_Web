@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const btnThem = document.getElementById("btnThem");
+  const cardten = document.getElementById("card-ten")
   const tbody = document.querySelector("table tbody");
   const thongBao = document.getElementById("thongBao");
   const form = btnThem.closest('form');
@@ -21,8 +22,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("Diachi").value   = tr.cells[6].innerText;
     const gt = tr.cells[4].innerText;
     document.getElementById(gt === "Nam" ? "gioiTinhNam" : "gioiTinhNu").checked = true;
-
+    cardten.textContent = "Form cập nhật sinh viên "
     btnThem.textContent = "Cập nhật sinh viên";
+
     btnThem.type = "button";
   });
 
