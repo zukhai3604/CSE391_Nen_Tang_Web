@@ -242,3 +242,6 @@ table.table .avatar {
   line-height: 1;
 }
 
+.input-error {
+  border: 2px solid red !important;
+}

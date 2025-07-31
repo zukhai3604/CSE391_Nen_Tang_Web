@@ -10,20 +10,20 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Thêm CSS để footer dính xuống dưới -->
+
   <style>
     html, body {
-      height: 100%; /* Đảm bảo html và body chiếm toàn bộ chiều cao màn hình */
+      height: 100%;
       margin: 0;
       padding: 0;
     }
     body {
-      display: flex; /* Biến body thành flex container */
-      flex-direction: column; /* Sắp xếp các phần tử con theo cột */
-      min-height: 100vh; /* Đảm bảo body chiếm ít nhất toàn bộ chiều cao viewport */
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
     main {
-      flex-grow: 1; /* Khiến phần nội dung chính giãn nở để chiếm hết không gian còn lại */
+      flex-grow: 1; 
     }
   </style>
 
@@ -74,8 +74,8 @@
   <div class="table-responsive">
     <div class="table-wrapper">
       <div class="table-title bg-light p-3">
-        <div class="row align-items-center"> <!-- Thêm align-items-center để căn giữa theo chiều dọc -->
-          <div class="col-md-4 d-flex align-items-center"> <!-- Cột trái: Thêm, Xuất ra file -->
+        <div class="row align-items-center">
+          <div class="col-md-4 d-flex align-items-center">
             <button id="btnAdd" class="btn btn-success mr-2" data-toggle="modal" data-target="#addModal">
               <i class="material-icons">&#xE147;</i> <strong>Thêm</strong>
             </button>
@@ -83,7 +83,7 @@
               <i class="fa fa-upload mr-2"></i> <strong>XUẤT RA FILE</strong>
             </button>
           </div>
-          <div class="col-md-4 d-flex justify-content-center"> <!-- Cột giữa: Tìm kiếm giao dịch -->
+          <div class="col-md-4 d-flex justify-content-center"> 
             <div class="input-group" style="max-width: 250px;">
               <input type="text" class="form-control" placeholder="Tìm kiếm giao dịch">
               <div class="input-group-append">
@@ -91,7 +91,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4"> <!-- Cột phải: Kết quả -->
+          <div class="col-md-4">
             <div class="float-right">
              <strong style="color: black"> Kết quả</strong>
               <select id="pageSize" class="custom-select custom-select-sm w-auto">
@@ -152,18 +152,18 @@
       <div class="modal-body">
         <div class="form-group">
           <label>Khách hàng</label>
-          <input id="inputCustomer" type="text" class="form-control" required>
-          <div id="customerError" class="text-danger small mt-1"></div> <!-- Thêm dòng này -->
+          <input id="inputCustomer" type="text" class="form-control" >
+          <div id="customerError" class="text-danger small mt-1"></div>
         </div>
         <div class="form-group">
           <label>Nhân viên</label>
-          <input id="inputEmployee" type="text" class="form-control" required>
-          <div id="employeeError" class="text-danger small mt-1"></div> <!-- Thêm dòng này -->
+          <input id="inputEmployee" type="text" class="form-control" >
+          <div id="employeeError" class="text-danger small mt-1"></div> 
         </div>
         <div class="form-group">
           <label>Số tiền</label>
-          <input id="inputAmount" type="number" class="form-control" required>
-          <div id="amountError" class="text-danger small mt-1"></div> <!-- Thêm dòng này -->
+          <input id="inputAmount" type="number" class="form-control" >
+          <div id="amountError" class="text-danger small mt-1"></div>
         </div>
       </div>
       <div class="modal-footer">
@@ -174,9 +174,7 @@
   </div>
 </div>
 </main>
-<!-- Kết thúc phần nội dung chính của trang -->
 
-<!-- Footer -->
 <footer class="text-white pt-2 pb-3 bg-primary">
   <div class="container">
     <div class="row">
@@ -193,7 +191,7 @@
   </div>
 </footer>
 
-<!-- Script -->
+
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script src="data.js"></script>
